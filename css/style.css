@@ -1,0 +1,264 @@
+/* ============================================
+   style.css – Portál remeselníkov
+   Doplnok k templatemo_style.css
+   ============================================ */
+
+/* --- Flash správy --- */
+.flash {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+    font-size: 12px;
+    font-family: Georgia, serif;
+}
+.flash-success { background: #f5f9f0; border-color: #6a994e; color: #3a6a1e; }
+.flash-error   { background: #fdf5f5; border-color: #c0392b; color: #8b1a1a; }
+.flash ul { margin: 4px 0 0 18px; padding: 0; }
+.flash li { margin-bottom: 3px; }
+
+/* --- Vyhľadávací formulár --- */
+.search-form {
+    margin-bottom: 5px;
+}
+.search-input {
+    width: 280px;
+    padding: 5px 8px;
+    border: 1px solid #c8b89a;
+    background: #faf7f0;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    color: #494234;
+    margin-right: 5px;
+}
+.filter-select {
+    padding: 5px 8px;
+    border: 1px solid #c8b89a;
+    background: #faf7f0;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    color: #494234;
+    margin-right: 5px;
+}
+.btn-submit {
+    padding: 5px 16px;
+    background: #494234;
+    color: #f5e6c8;
+    border: none;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+}
+.btn-submit:hover { background: #2f291d; }
+.btn-reset {
+    font-size: 12px;
+    color: #947c58 !important;
+    font-style: italic;
+    text-decoration: underline !important;
+    margin-left: 8px;
+}
+
+/* Počet výsledkov vedľa nadpisu */
+.pocet {
+    font-size: 16px;
+    font-style: normal;
+    color: #947c58;
+}
+
+/* --- Karta remeselníka – štýl podľa šablóny --- */
+.remeslar-karta {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #c8b89a;
+    background: transparent;
+    overflow: hidden;
+}
+.remeslar-foto {
+    float: left;
+    margin-right: 20px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    background: transparent;
+}
+.remeslar-foto img {
+    width: 120px;
+    height: 100px;
+    object-fit: cover;
+    border: none;
+    display: block;
+    background: transparent;
+    mix-blend-mode: multiply;
+}
+.remeslar-info {
+    overflow: hidden;
+}
+.remeslar-info h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2f291d;
+    margin: 0 0 6px 0;
+    padding: 0;
+}
+.odbor-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    background: #947c58;
+    color: #f5e6c8;
+    font-size: 11px;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+.remeslar-mesto {
+    font-size: 12px;
+    color: #7a6d5a;
+    margin: 0 0 6px 0 !important;
+}
+.remeslar-popis {
+    font-size: 12px;
+    color: #494234;
+    margin: 0 0 8px 0 !important;
+    text-align: justify;
+}
+.remeslar-kontakt {
+    font-size: 11px;
+    color: #947c58;
+}
+.remeslar-kontakt a {
+    color: #947c58 !important;
+    font-style: italic !important;
+    text-decoration: none !important;
+    margin-right: 12px;
+}
+.remeslar-kontakt a:hover {
+    text-decoration: underline !important;
+}
+.remeslar-kontakt span {
+    margin-right: 12px;
+}
+
+/* --- Tlačidlá (admin) --- */
+.btn-primary {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #494234;
+    color: #f5e6c8 !important;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+    text-decoration: none !important;
+    border: none;
+    cursor: pointer;
+}
+.btn-primary:hover { background: #2f291d; }
+
+.btn-secondary {
+    display: inline-block;
+    padding: 6px 18px;
+    background: transparent;
+    color: #494234 !important;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+    text-decoration: none !important;
+    border: 1px solid #c8b89a;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.btn-secondary:hover { background: #f0ebe0; }
+
+.btn-edit {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #947c58;
+    color: #fff !important;
+    font-size: 11px;
+    text-decoration: none !important;
+    margin-right: 4px;
+    font-style: normal !important;
+}
+.btn-edit:hover { background: #7a6340; }
+
+.btn-delete {
+    padding: 3px 10px;
+    background: #8b3a2a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+    font-family: Georgia, serif;
+}
+.btn-delete:hover { background: #6b2a1a; }
+
+/* --- Admin formulár --- */
+.admin-form { max-width: 540px; margin-top: 10px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #3a3228;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #c8b89a;
+    background: #faf7f0;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    color: #3a3228;
+    box-sizing: border-box;
+}
+.form-group textarea { resize: vertical; }
+.required { color: #8b3a2a; }
+
+/* --- Admin tabuľka --- */
+.admin-tabulka {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: Georgia, serif;
+}
+.admin-tabulka th {
+    background: #494234;
+    color: #f5e6c8;
+    padding: 8px 10px;
+    text-align: left;
+    font-style: italic;
+    font-weight: normal;
+    border-bottom: 2px solid #2f291d;
+}
+.admin-tabulka td {
+    padding: 8px 10px;
+    border-bottom: 1px dotted #c8b89a;
+    vertical-align: middle;
+    color: #494234;
+}
+.admin-tabulka tr:hover td { background: #faf7f0; }
+.akcie { white-space: nowrap; }
+
+/* --- Oprava čiernych plôch --- */
+
+/* Kontajner nesmie presahovať - orezáva všetko čo vyčnieva */
+#templatemo_container {
+    overflow: hidden;
+}
+
+/* Žiarovka má čierne PNG pozadie - mix-blend-mode:screen spôsobí
+   že čierna farba sa stane priehľadnou (čierna + screen = nič vidno) */
+#templatemo_container #bulb,
+#templatemo_container #bulb:hover {
+    mix-blend-mode: screen;
+}
+
+/* Hlavička - presná šírka kontajnera */
+#templatemo_site_title_bar {
+    width: 900px !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
