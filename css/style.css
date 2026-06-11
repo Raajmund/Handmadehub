@@ -1,9 +1,4 @@
-/* ============================================
-   style.css – Portál remeselníkov
-   Doplnok k templatemo_style.css
-   ============================================ */
 
-/* --- Flash správy --- */
 .flash {
     padding: 10px 15px;
     margin-bottom: 20px;
@@ -16,7 +11,6 @@
 .flash ul { margin: 4px 0 0 18px; padding: 0; }
 .flash li { margin-bottom: 3px; }
 
-/* --- Vyhľadávací formulár --- */
 .search-form {
     margin-bottom: 5px;
 }
@@ -58,14 +52,12 @@
     margin-left: 8px;
 }
 
-/* Počet výsledkov vedľa nadpisu */
 .pocet {
     font-size: 16px;
     font-style: normal;
     color: #947c58;
 }
 
-/* --- Karta remeselníka – štýl podľa šablóny --- */
 .remeslar-karta {
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -242,21 +234,15 @@
 .admin-tabulka tr:hover td { background: #faf7f0; }
 .akcie { white-space: nowrap; }
 
-/* --- Oprava čiernych plôch --- */
-
-/* Kontajner nesmie presahovať - orezáva všetko čo vyčnieva */
 #templatemo_container {
     overflow: hidden;
 }
 
-/* Žiarovka má čierne PNG pozadie - mix-blend-mode:screen spôsobí
-   že čierna farba sa stane priehľadnou (čierna + screen = nič vidno) */
 #templatemo_container #bulb,
 #templatemo_container #bulb:hover {
     mix-blend-mode: screen;
 }
 
-/* Hlavička - presná šírka kontajnera */
 #templatemo_site_title_bar {
     width: 900px !important;
     padding: 0 !important;

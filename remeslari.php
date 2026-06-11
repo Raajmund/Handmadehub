@@ -27,7 +27,6 @@ $flash  = getFlash();
 <meta name="description" content="" />
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-/* Minimálne štýly len pre nové prvky */
 .search-form { margin-bottom: 10px; }
 .search-input { padding: 4px 8px; border: 1px solid #c8b89a; background: #faf7f0; font-family: Georgia, serif; font-size: 12px; color: #494234; width: 240px; }
 .filter-select { padding: 4px 6px; border: 1px solid #c8b89a; background: #faf7f0; font-family: Georgia, serif; font-size: 12px; color: #494234; margin: 0 5px; }

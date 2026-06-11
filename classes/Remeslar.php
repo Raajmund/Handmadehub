@@ -1,36 +1,20 @@
 <?php
-// ============================================
-// classes/Remeslar.php
-// OOP trieda pre entitu Remeselník – CRUD operácie
-// ============================================
 
 class Remeslar
 {
     private PDO $db;
 
-    // Konštruktor prijme databázové spojenie (Dependency Injection)
     public function __construct(PDO $db)
     {
         $this->db = $db;
     }
 
-    // -------------------------------------------------------
-    // READ – čítanie záznamov
-    // -------------------------------------------------------
-
-    /**
-     * Vráti všetkých remeselníkov (zoradených podľa mena).
-     */
     public function getAll(): array
     {
         $stmt = $this->db->query('SELECT * FROM remeslari ORDER BY meno ASC');
         return $stmt->fetchAll();
     }
 
-    /**
-     * Vráti remeselníkov podľa odboru.
-     * Použitie: $model->getByOdbor('Hrnčiarstvo')
-     */
     public function getByOdbor(string $odbor): array
     {
         $stmt = $this->db->prepare(
@@ -40,10 +24,6 @@ class Remeslar
         return $stmt->fetchAll();
     }
 
-    /**
-     * Vráti jedného remeselníka podľa jeho ID.
-     * Vráti false ak neexistuje.
-     */
     public function getById(int $id): array|false
     {
         $stmt = $this->db->prepare(
@@ -53,9 +33,6 @@ class Remeslar
         return $stmt->fetch();
     }
 
-    /**
-     * Vyhľadávanie – hľadá v mene, meste alebo odbore.
-     */
     public function search(string $query): array
     {
       if (trim($query) === '') {
@@ -72,9 +49,6 @@ class Remeslar
     return $stmt->fetchAll() ?: [];
     }
 
-    /**
-     * Vráti zoznam unikátnych odborov (pre filter/dropdown).
-     */
     public function getOdbory(): array
     {
         $stmt = $this->db->query(
@@ -83,15 +57,6 @@ class Remeslar
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
-    // -------------------------------------------------------
-    // CREATE – pridanie záznamu
-    // -------------------------------------------------------
-
-    /**
-     * Pridá nového remeselníka.
-     * $data = asociatívne pole z formulára.
-     * Vráti ID nového záznamu.
-     */
     public function create(array $data): int
     {
         $stmt = $this->db->prepare(
@@ -110,17 +75,8 @@ class Remeslar
         return (int) $this->db->lastInsertId();
     }
 
-    // -------------------------------------------------------
-    // UPDATE – úprava záznamu
-    // -------------------------------------------------------
-
-    /**
-     * Aktualizuje existujúceho remeselníka.
-     * Vráti počet ovplyvnených riadkov (1 = úspech, 0 = nič sa nezmenilo).
-     */
     public function update(int $id, array $data): int
     {
-        // Ak je nahraná nová fotka, aktualizuj aj stĺpec fotka
         $fotkaSQL = isset($data['fotka']) ? ', fotka = :fotka' : '';
 
         $stmt = $this->db->prepare(
@@ -153,17 +109,8 @@ class Remeslar
         return $stmt->rowCount();
     }
 
-    // -------------------------------------------------------
-    // DELETE – zmazanie záznamu
-    // -------------------------------------------------------
-
-    /**
-     * Zmaže remeselníka podľa ID.
-     * Vráti jeho fotku (názov súboru) pre prípadné zmazanie z disku.
-     */
     public function delete(int $id): string|null
     {
-        // Najprv načítaj fotku, aby sme ju mohli zmazať z disku
         $remeslar = $this->getById($id);
         $fotka    = $remeslar ? $remeslar['fotka'] : null;
 
@@ -173,14 +120,6 @@ class Remeslar
         return $fotka;
     }
 
-    // -------------------------------------------------------
-    // Pomocná metóda
-    // -------------------------------------------------------
-
-    /**
-     * Základné čistenie vstupu – odstráni prebytočné medzery.
-     * PDO prepared statements chránia pred SQL injection automaticky.
-     */
     private function sanitize(string $value): string
     {
         return trim(strip_tags($value));
